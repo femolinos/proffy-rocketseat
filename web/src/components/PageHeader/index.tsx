@@ -8,6 +8,7 @@ import './styles.css';
 
 interface PageHeaderProps {
   title: string; /* Isto é necessário para adicionar a tipagem de cada uma das propriedades enviadas para o componente. Para propriedades não obrigatórias, usar o "?" após o nome da propriedade */
+  description?: string;
 }
 
 const PageHeader: React.FC<PageHeaderProps> = (props) => {
@@ -22,6 +23,8 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
 
       <div className="header-content">
         <strong>{props.title}</strong>
+        { props.description && <p>{ props.description }</p> }
+
         {props.children}
       </div>
     </header>
